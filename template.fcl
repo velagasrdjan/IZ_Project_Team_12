@@ -1,0 +1,100 @@
+
+FUNCTION_BLOCK attacks
+
+VAR_INPUT               // ulazne varijable
+    access_control: REAL;
+    availability: REAL;
+    authorization: REAL;
+    confidentiality: REAL;
+    integrity: REAL;
+    prerequisites: REAL;
+    scope : REAL;
+	severity : REAL;
+
+END_VAR
+
+VAR_OUTPUT              // izlazne varijable
+	risk : REAL;
+END_VAR
+
+FUZZIFY severity
+	TERM low := (0, 1) (0.3, 0);
+	TERM medium := (0.2, 0) (0.4, 1) (0.5,1) (0.7, 0);
+	TERM high := (0.6,0) (0.75,1) (0.9,0);
+	TERM very_high := (0.8,0) (1,1);
+END_FUZZIFY
+
+FUZZIFY scope
+	TERM unchanged := (0, 1) (1, 0);
+	TERM changed := (0,0) (1,1);
+END_FUZZIFY
+
+FUZZIFY confidentiality
+	TERM not_affected := (0, 1) (1, 0);
+	TERM affected := (0,0) (1,1);
+END_FUZZIFY
+
+FUZZIFY integrity
+	TERM not_affected := (0, 1) (1, 0);
+	TERM affected := (0,0) (1,1);
+END_FUZZIFY
+
+FUZZIFY access_control
+	TERM none := (0,1) (0.1, 0);
+	TERM low := (0.1,0) (0.2,1) (0.4,1) (0.6,0);
+	TERM high := (0.6,0) (0.9,1) (1,1);
+END_FUZZIFY
+
+FUZZIFY availability
+	TERM not_affected := (0, 1) (1, 0);
+	TERM affected := (0,0) (1,1);
+END_FUZZIFY
+
+FUZZIFY authorization
+	TERM not_affected := (0, 1) (1, 0);
+	TERM affected := (0,0) (1,1);
+END_FUZZIFY
+
+FUZZIFY prerequisites
+	TERM none := (0,1) (0.1,0);
+	TERM low := (0,0) (0.1,1) (0.3,1) (0.6,0);
+	TERM high := (0.6,0) (1,1);
+END_FUZZIFY
+
+DEFUZZIFY risk
+	TERM low := (0,1) (3,0);
+	TERM medium := (2,0) (4,1) (6,1) (8,0);
+	TERM high := (7,0) (10,1);
+	METHOD : COG;		// 'Center Of Gravity' odn. centar mase (koristi se i MM odn. mean max)
+	DEFAULT := 0;		// podrazumevana vrednost (ukoliko nijedno pravilo nije aktivirano)
+END_DEFUZZIFY
+
+RULEBLOCK blok1
+	AND : MIN;			// za konjunkciju se koristi minimum (samim tim sa za disjunkciju koristi maksimum)
+	ACT : MIN;			// za zakljuÄ�ivanje (implikaciju) je izabran minimum (Mamdani implikacija) (osim MIN koristi se i PROD)
+	ACCU : MAX;			// za kompoziciju je izabran maksimum (osim MAX koristi se i SUM)
+
+	RULE 1 : IF severity IS low THEN risk IS low WITH 0.6;
+	RULE 2 : IF prerequisites IS none THEN risk IS high;
+	RULE 3 : IF prerequisites IS low THEN risk IS high WITH 0.8;
+	RULE 4 : IF prerequisites IS high THEN risk IS medium WITH 0.3;
+	RULE 5 : IF (prerequisites IS high) OR (scope IS unchanged) THEN risk IS low WITH 0.7;
+	RULE 6 : IF (scope IS changed) AND (confidentiality IS affected) THEN risk IS medium WITH 0.6;
+	RULE 7 : IF (scope IS changed) AND (confidentiality IS affected) THEN risk IS low WITH 0.4;
+	RULE 8 : IF (scope IS changed) AND (severity IS very_high) THEN risk IS high;
+	RULE 9 : IF (scope IS changed) AND (severity IS high) THEN risk IS high WITH 0.9;
+	RULE 10 : IF severity IS medium AND confidentiality IS affected THEN risk IS high WITH 0.7;
+	RULE 11 : IF confidentiality IS affected AND integrity IS affected AND access_control IS high AND authorization IS affected AND availability IS affected THEN risk IS high;
+	RULE 12 : IF access_control IS high AND authorization IS affected THEN risk IS high WITH 0.6;
+	RULE 13 : IF confidentiality IS not_affected AND scope IS changed THEN risk IS medium WITH 0.7;
+	RULE 14 : IF confidentiality IS not_affected AND scope IS changed THEN risk IS low WITH 0.3;
+	RULE 15 : IF access_control IS high AND confidentiality IS not_affected THEN risk IS high WITH 0.8;
+	RULE 16 : IF availability IS affected THEN risk IS medium WITH 0.8;
+	RULE 17 : IF severity IS low THEN risk IS high WITH 0.4;
+	RULE 18 : IF availability IS not_affected AND scope IS changed THEN risk IS medium WITH 0.5;
+	RULE 19 : IF integrity IS affected THEN risk IS medium WITH 0.6;
+
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
+
