@@ -9,23 +9,42 @@ public class MainMenu {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel(gl);
         panel.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
-        JButton fuzzy = new JButton("Fuzzy");
+        JButton fuzzy = new JButton("Risk calculation(Fuzzy)");
         fuzzy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new GUI();
             }
         });
-        JButton bayes = new JButton("Bayes");
+        JButton bayes = new JButton("Classification(Bayes)");
         bayes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Bayes();
             }
         });
+        JButton register = new JButton("Register new attack");
+        register.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Registration();
+            }
+        });
+        JButton viewAll = new JButton("View all attacks"); // ovde ce biti i izmena postojecih napada
+        viewAll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AttackTable();
+            }
+        });
+
+
         panel.add(fuzzy);
         panel.add(bayes);
+        panel.add(register);
+        panel.add(viewAll);
 
+        frame.setPreferredSize(new Dimension(400, 300));
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("MainMenu");
