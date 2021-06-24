@@ -1,0 +1,37 @@
+#Name,Risk,Severity,Scope,Impact,Skills Required,Prerequisites,Mitigations
+Query System for Information;High;Low;Confidentiality;Read Data;none;High;Construct a code book for error messages:Wrap application functionality in an output encoding scheme
+Directory Indexing;High;Medium;Confidentiality;Confidentiality:Read Data:Information Leakage;Low;none;Using blank index html:Preventing with .htaccess in Apache web server:Suppressing error messages
+Fuzzing for application mapping;High;Low;Confidentiality;Confidentiality:Information Leakage;High;High;Construct a code book for error messages:Wrap application functionality in an output encoding scheme:Obfuscate server fields of HTTP response:Hide inner ordering of HTTP response header:Customizing HTTP error codes such as 404 or 500:Hide HTTP response header software information filed:Hide cookies software information filed:Obfuscate database type in database APIs error message
+Fuzzing for garnering other adjacent user/sensitive data;none;Medium;none;none;none;Low;none
+Cross-Domain Search Timing;none;Medium;Confidentiality;Read Data;Low;High;Cross site request forgery protection:The browsers security not leak timing information for cross domain requests
+WSDL Scanning;High;High;Confidentiality;Read Data;Low;none;Validate the received messages against the WSDL Schema:Provide limited access to WSDL file:Ensure the WSDL does not expose functions and APIs:Do not give an easily guessed function name
+
+Pull Data from System Resources;none;none;none;Pull data;none;High;none
+Probe Application Memory;Low;Medium;Confidentiality;Confidentiality:Read Data;High;Low;Deletion of data
+Excavation;High;Medium;Confidentiality;Read Data;none;High;Minimize response output:Remove potentially sensitive information
+Collect Data from Common Resource Locations;none;Medium;none;none;none;Low;none
+White Box Reverse Engineering;none;Medium;none;none;none;Low;none
+Lifting Sensitive Data Embedded in Cache;none;Medium;none;Pull data;none;High;Strong encryption schemes
+Retrieve Embedded Sensitive Data;High;Very high;Confidentiality:Integrity:Access Control:Authorization;Read Data:Modify Data:Gain Privileges;High;High;none
+Black Box Reverse Engineering;none;Low;none;none;none;Low;none
+Analysis of Packet Timing and Sizes;none;Low;Confidentiality;Read Data;Low;High;Distort packet sizes and timing at VPN layer by adding padding to normalize packet sizes and timing delays
+Electromagnetic Side-Channel Attack;none;Low;Confidentiality;Read Data;High;Low;Utilize side channel resistant implementations of all crypto algorithms:Strong physical security of all devices that contain secret key information
+Compromising Emanations;none;Low;Confidentiality;Read Data;High;High;none
+Protocol Analysis;Low;Low;Confidentiality:Integrity;Confidentiality:Read Data:Modify Data;Low;none;none;
+Cryptanalysis;Low;Very high;Confidentiality;Confidentiality:Read Data;High;Low;Algorithms are used correctly:Use proven cryptographic algorithms
+Reverse Engineering;Low;Low;none;none;Low;Low;Employ code obfuscation techniques:Use safe libraries
+Leveraging Race Conditions;High;High;Confidetiality:Access Control:Authorization:Integrity;Gain Privileges:Modify Data;High;High;Use synchronization:Use safe libraries
+Manipulating State;Medium;High;Confidetiality:Access Control:Authorization:Integrity:Availability;Gain Privileges:Modify Data:Unreliable Execution;High;High;Do not rely solely on user-controllable locations to maintain user state:Avoid sensitive information in user-controllable locations:Sensitive information that is part of the user state must be appropriately protected:All possible states must be handled by hardware finite state machines.
+Shared Resource Manipulation;none;Medium;none;none;none;Low;none;
+Hardware Fault Injection;Low;High;Confidentiality:Integrity;Read Data:Bypass Protection Mechanism:Hide Activities:Execute Unauthorized Commands;Low;High;Implement robust physical security countermeasures and monitoring
+Mobile Device Fault Injection;none;none;Confidentiality:Access Control;Read Data;Low;none;Strong physical security for devices holding key:Frequent changes to keys:Frequent changes to certificates
+Interface Manipulation;Medium;Medium;none;Access control;none;High;none
+Exploit Non-Production Interfaces;Low;High;Confidentiality:Access Control:Authentication;Gain Privileges:Bypass Protection;High;High;Ensure that production systems do not contain non production interfaces:Non production interfaces are only used in development environments
+Root/Jailbreak Detection Evasion via Debugging;Medium;Very High;Integrity:Authorization;Execute Unauthorized Commands;High;Low;Ensure that debuggers are not attached
+Functionality Misuse;Medium;Medium;Confidentiality;Gain Privileges;High;High;perform comprehensive threat modeling a process of identifying evaluating and mitigating potential threats to the application
+Content Spoofing;Medium;Medium;Integrity;Modify Data;none;High;none
+Counterfeit GPS Signals;Low;High;Integrity;Modify Data;Low;Low;none
+Resource Location Spoofing;Medium;Medium;Authorization;none;Low;High;Monitor network activity 
+Establish Rogue Location;Medium;Medium;Confidentiality:Integrity;Read Data;none;none;none
+Evil Twin Wi-Fi Attack;none;Low;Confidentiality;Read Data;none;High;Commercial defensive technology 
+Cellular Rogue Base Station;none;Low;Confidentiality;Read Data;none;Low;Passively monitor cellular network connection 

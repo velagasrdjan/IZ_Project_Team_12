@@ -7,5 +7,7 @@
 	<classpathentry kind="lib" path="lib/jpf-1.5.jar"/>
 	<classpathentry kind="lib" path="lib/unbbayes-4.22.18.jar"/>
 	<classpathentry kind="lib" path="unbbayes-4.22.18.jar"/>
+	<classpathentry kind="lib" path="lib/jCOLIBRI-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-api-2.11.1.jar"/>
 	<classpathentry kind="output" path="out/production/inzenjering"/>
 </classpath>
