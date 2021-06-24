@@ -19,7 +19,7 @@ public class RemoteDatabase {
 
    /*public static String parseImpact(String impact){
         String result = "";
-        if(impact.length()==0){
+        if(impact.lenguth()==0){
             return result;
         }
         else{
@@ -156,6 +156,13 @@ public class RemoteDatabase {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+        for(Attack a:attackList) {
+            System.out.println("Svi napadi iz selecta suuuuu" + a.getName() +"mitigations "+a.getMitigations());
+
+        	
+        }
+        
         return attackList;
     }
 }

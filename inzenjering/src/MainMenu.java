@@ -40,6 +40,12 @@ public class MainMenu implements StandardCBRApplication {
 	NNConfig simConfig;  /** KNN configuration */
 	public static JFrame frame;
 	
+	public static ArrayList<String> res=new ArrayList<String>();
+	
+	
+
+
+	
 	CsvConnector konektor=new CsvConnector();
 	
 	
@@ -90,8 +96,21 @@ public class MainMenu implements StandardCBRApplication {
 		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
 		eval = SelectCases.selectTopKRR(eval, 5);
 		System.out.println("Retrieved cases:");
-		for (RetrievalResult nse : eval)
+
+
+		if(res.size()==0) {
+			
+		}else {
+			res.clear();
+		}
+		
+		for (RetrievalResult nse : eval) {		
 			System.out.println(nse.get_case().getDescription() + " -> " + nse.getEval());
+		    res.add(nse.get_case().getDescription() + " -> " + nse.getEval());
+		}
+		
+		
+		
 	}
 
 
@@ -118,49 +137,7 @@ public class MainMenu implements StandardCBRApplication {
     	
     	
     	
-    	
-    	Collection<CBRCase> attacks=ccc.retrieveAllCases();
-    	System.out.println("Napadi suu  "+attacks);
-    	
-    	StandardCBRApplication recommender = new MainMenu();
-		try {
-			recommender.configure();
-
-			recommender.preCycle();
-			
-			
-			///////////////////////////////izlistaj sve podatke
-			
-
-			CBRQuery query = new CBRQuery();
-			
-			Model model=new Model();
-			
-			//	//Name,Risk,Severity,Scope,Impact,Skills Required,Prerequisites,Mitigations
-//Collect Data from Common Resource Locations;none;Medium;none;none;none;none;none
-
-			model.setName("Collect Data from Common Resource Locations");
-			model.setRisk("none");
-			model.setSeverity("Medium");
-			model.setScope("none");
-			model.setImpact("none");
-			model.setSkills("none");
-			model.setPrerequisites("none");
-			model.setMitigations("none");
-			
-			query.setDescription(model);
-			recommender.cycle(query);
-
-			recommender.postCycle();
-			
-			
-			
-			
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+  
 	
     	
     	
@@ -208,8 +185,17 @@ public class MainMenu implements StandardCBRApplication {
 
             }
         });
+        JButton cbr = new JButton("View similarity"); // ovde ce biti i izmena postojecih napada
+        cbr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                List<Attack> attacks = RemoteDatabase.selectAllQuery();
+                new CbrTable(attacks);
 
-		JButton cbd = new JButton("Finf similar attack"); // ovde ce biti i izmena postojecih napada
+            }
+        });
+
+		JButton cbd = new JButton("Find similar attack"); // ovde ce biti i izmena postojecih napada
 		cbd.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -222,6 +208,8 @@ public class MainMenu implements StandardCBRApplication {
         panel.add(bayes);
         panel.add(register);
         panel.add(viewAll);
+        panel.add(cbr);
+        
 
         frame.setPreferredSize(new Dimension(400, 300));
         frame.setContentPane(panel);
@@ -237,4 +225,12 @@ public class MainMenu implements StandardCBRApplication {
 		frame.repaint();
 		frame.revalidate();
     }
+
+	public static ArrayList<String> getRes() {
+		return res;
+	}
+
+	public static void setRes(ArrayList<String> res) {
+		MainMenu.res = res;
+	}
 }

@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
@@ -14,11 +16,11 @@ class ButtonCellRenderer extends JButton implements TableCellRenderer{
     }
 }
 
-public class AttackTable {
-    public AttackTable(List<Attack> attackList){
+public class CbrTable {
+    public CbrTable(List<Attack> attackList){
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
-        
+
         String[] columnNames = {"Name",
                 "Impact",
                 "Mitigations",
@@ -46,7 +48,19 @@ public class AttackTable {
         DefaultTableModel dm = new DefaultTableModel();
         dm.setDataVector(data, columnNames);
         JTable table = new JTable(dm);
-
+ 
+        
+        table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+			
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				if(e.getValueIsAdjusting()) {
+					int row =table.getSelectedRow();
+					new Cbr(attackList.get(row));
+				}
+				
+			}
+		});;
 
         
         
