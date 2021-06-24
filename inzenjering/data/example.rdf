@@ -5,20 +5,20 @@
 	xmlns:attacks="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#">
 
 
-	<!--<rdf:Description rdf:about="#QuerySystemForInformation">
-		<rdf:type rdf:resource="#Attack"/>
-		<attack:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Query System for Information</attack:name>
-	    <attack:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">High</attack:risk>
-		<attack:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">Low</attack:severity>
-		<attack:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">Confidentiality</attack:scope>
-		<attack:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">Read Data</attack:impact>
-		<attack:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">None</attack:skills_required>
-		<attack:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">High</attack:prerequisites>
-		<attack:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Construct a code book for error messages:Wrap application functionality in an output encoding scheme</attack:mitigations>
-
-	</rdf:Description>-->
-
 	<rdf:Description rdf:about="#QuerySystemForInformation">
+		<rdf:type rdf:resource="#Attack"/>
+		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Query System for Information</attacks:name>
+	    <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">High</attacks:risk>
+		<attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">Low</attacks:severity>
+		<attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">Confidentiality</attacks:scope>
+		<attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">Read Data</attacks:impact>
+		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">None</attacks:skills_required>
+		<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">High</attacks:prerequisites>
+		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Construct a code book for error messages:Wrap application functionality in an output encoding scheme</attacks:mitigations>
+
+	</rdf:Description>
+
+	<!--<rdf:Description rdf:about="#QuerySystemForInformation">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Query System for Information</attacks:name>
         <attacks:risk rdf:resource="#High"/>
@@ -64,5 +64,5 @@
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">None</attacks:name>
      </rdf:Description>
 
-
+-->
 </rdf:RDF>

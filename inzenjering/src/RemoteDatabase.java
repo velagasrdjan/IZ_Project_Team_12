@@ -13,11 +13,11 @@ import java.util.List;
 
 public class RemoteDatabase {
 
-    private static final String QUERY_URL = "http://localhost:3030/novaDB/sparql";
-    private static final String UPDATE_URL = "http://localhost:3030/novaDB/update";
+    private static final String QUERY_URL = "http://localhost:3030/baza3/sparql";
+    private static final String UPDATE_URL = "http://localhost:3030/baza3/update";
 
 
-   /* public static String parseImpact(String impact){
+   /*public static String parseImpact(String impact){
         String result = "";
         if(impact.length()==0){
             return result;
@@ -104,13 +104,15 @@ public class RemoteDatabase {
        String insertString = ""
                + "PREFIX attacks: <https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#> "
                + "INSERT DATA {"
-               + " attacks:" + attack.name.replaceAll(" ", "") + " a attacks:Attack ; "
+               + " attacks:" + attack.name.replaceAll(" ", "") +"\n"
+               + " a attacks:Attack ; "
                + " attacks:impact  '" + attack.impact + "' ^^<http://w3.org/2001/XMLSchema#string>;"
                + " attacks:mitigations  '" + attack.mitigations + "' ^^<http://w3.org/2001/XMLSchema#string>;"
                + " attacks:name  '" + attack.name + "' ^^<http://w3.org/2001/XMLSchema#string>;"
                + " attacks:prerequisites  '" + attack.prerequisites + "' ^^<http://w3.org/2001/XMLSchema#string>;"
                + " attacks:risk  '" + attack.risk + "' ^^<http://w3.org/2001/XMLSchema#string>;"
                + " attacks:scope  '" + attack.scope + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+               + " attacks:severity  '" + attack.severity + "' ^^<http://w3.org/2001/XMLSchema#string>;"
                + " attacks:skills_required  '" + attack.skills_required + "' ^^<http://w3.org/2001/XMLSchema#string>."
                + "}";
        System.out.println(insertString);
@@ -120,7 +122,7 @@ public class RemoteDatabase {
        updateProcessor.execute();
    }
 
-    public static void selectAllQuery() {
+    public static List<Attack>  selectAllQuery() {
         String queryString = ""
             +"PREFIX attacks: <https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#>"
             +"SELECT ?x ?name ?scope ?impact ?mitigations ?skills_required ?risk ?prerequisites ?severity" +
@@ -137,14 +139,24 @@ public class RemoteDatabase {
             ResultSet results = qexec.execSelect() ;
             while (results.hasNext()) {
                 QuerySolution solution = results.nextSolution() ;
-                Resource resource = solution.getResource("x");
+                System.out.println(solution.getLiteral("name").getString());
+                System.out.println(solution.getLiteral("impact").getString());
 
-                //attackList.add(new Attack(solution.getLiteral("name").getString(), ));
+                attackList.add(new Attack(solution.getLiteral("name").getString(),
+                        solution.getLiteral("impact").getString(),
+                        solution.getLiteral("mitigations").getString(),
+                        solution.getLiteral("prerequisites").getString(),
+                        solution.getLiteral("risk").getString(),
+                        solution.getLiteral("scope").getString(),
+                        solution.getLiteral("severity").getString(),
+                        solution.getLiteral("skills_required").getString() ));
 
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return attackList;
     }
     public static void load(Attack attack) {
         // DELETE

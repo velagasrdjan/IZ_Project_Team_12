@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class MainMenu {
     public static void main (String[] args){
@@ -34,8 +35,9 @@ public class MainMenu {
         viewAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AttackTable();
-                RemoteDatabase.selectAllQuery();
+                List<Attack> attacks = RemoteDatabase.selectAllQuery();
+                new AttackTable(attacks);
+
             }
         });
 
