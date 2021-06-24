@@ -64,6 +64,7 @@ public class MitigationsTable {
         // Frame Size
         frame.setSize(800, 400);
         // Frame Visible = true
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 

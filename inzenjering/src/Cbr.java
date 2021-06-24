@@ -77,7 +77,7 @@ public class Cbr {
 	                data[i]= new String[]
 	                        {
 	                        		split2[0],
-									split3[1].trim().substring(0,6)
+									split3[1].trim()
 	                        		//newRes.get(i).ress
 	                        };
 
@@ -98,7 +98,7 @@ public class Cbr {
 	       frame.add(sp);
 	       
 	        frame.setSize(800, 400);
-	        
+		frame.setLocationRelativeTo(null);
 	        frame.setVisible(true);
 		
 		

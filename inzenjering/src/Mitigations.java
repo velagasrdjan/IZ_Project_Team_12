@@ -69,6 +69,7 @@ public class Mitigations {
 	        //frame.add(register);
 	        // Frame Size
 	        frame.setSize(800, 400);
+					frame.setLocationRelativeTo(null);
 	        // Frame Visible = true
 	        frame.setVisible(true);
 		
