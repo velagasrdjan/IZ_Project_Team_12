@@ -14,5 +14,12 @@
                          -unbbayes, 
                          -jColibri i 
                          -apache.jena biblioteka.
-    Pokrenite aplikaciju. 
+    Kako biste pokrenuli dokumentalističku bazu, pokrenite fuseki-server.
+    Na localhost:3030 kreirajte dataset sa nazivom "db_inz" i upload-ujte fajl data/example.rdf za unos svih napada.
+    Pokrenite aplikaciju iz InteliJIDEA okruženja. 
 # Demo 
+
+
+https://user-images.githubusercontent.com/58363360/123331311-6b03d000-d53f-11eb-96bd-ccc5b3029900.mp4
+
+
