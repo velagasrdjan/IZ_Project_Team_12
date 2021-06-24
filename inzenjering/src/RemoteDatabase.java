@@ -158,42 +158,4 @@ public class RemoteDatabase {
         }
         return attackList;
     }
-    public static void load(Attack attack) {
-        // DELETE
-        String deleteString = ""
-                + "PREFIX iz: <http://www.ftn.uns.ac.rs/iz#> "
-                + "DELETE "
-                + "WHERE {"
-                + "    iz:XYZ ?x ?y ."
-                + "}";
-        UpdateRequest updateRequest2 = UpdateFactory.create(deleteString);
-        UpdateProcessor updateProcessor2 = UpdateExecutionFactory.createRemote(updateRequest2, UPDATE_URL);
-        updateProcessor2.execute();
-
-        // SELECT
-        String queryString = ""
-                + "PREFIX iz: <http://www.ftn.uns.ac.rs/iz#> "
-                + "SELECT ?profesor ?imeProfesora "
-                + "WHERE {"
-                + "    ?predmet a iz:Predmet ;"
-                + "        iz:profesor ?profesor ."
-                + "    ?profesor a iz:Osoba ;"
-                + "        iz:ime ?imeProfesora ."
-                + "}";
-        Query query = QueryFactory.create(queryString) ;
-        try {
-            QueryExecution qexec = QueryExecutionFactory.sparqlService(QUERY_URL, query);
-
-            ResultSet results = qexec.execSelect() ;
-            while (results.hasNext()) {
-                QuerySolution solution = results.nextSolution() ;
-                Resource resource = solution.getResource("profesor");
-                Literal literal = solution.getLiteral("imeProfesora");
-                System.out.println(resource.getURI());
-                System.out.println(literal.getString());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -97,7 +97,7 @@ public class Registration {
         panel.add(read_data,gbc);
         gbc.gridx = 2;
         gbc.gridy = 5;
-        JCheckBox confidentiality2 = new JCheckBox("confidentiality Impact");
+        JCheckBox confidentiality2 = new JCheckBox("confidentiality");
         panel.add(confidentiality2,gbc);
         gbc.gridx = 3;
         gbc.gridy = 5;
@@ -139,7 +139,7 @@ public class Registration {
         panel.add(execute_unauthorized_commands,gbc);
         gbc.gridx = 2;
         gbc.gridy = 8;
-        JCheckBox access_control2 = new JCheckBox("access control Impact");
+        JCheckBox access_control2 = new JCheckBox("access control");
         panel.add(access_control2,gbc);
 
 
