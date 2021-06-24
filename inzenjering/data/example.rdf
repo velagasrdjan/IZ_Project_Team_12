@@ -3,7 +3,7 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xml:base="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks"
 	xmlns:attacks="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#">
-
+    <!--1-->
 	<rdf:Description rdf:about="#QuerySystemForInformation">
 		<rdf:type rdf:resource="#Attack"/>
 		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Query System for Information</attacks:name>
@@ -14,7 +14,439 @@
 		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
 		<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
 		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Construct a code book for error messages:Wrap application functionality in an output encoding scheme</attacks:mitigations>
-
 	</rdf:Description>
+    <!--2-->
+    <rdf:Description rdf:about="#DirectoryIndexing">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Directory Indexing</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:read data:information leakage</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Using blank index html:Preventing with .htaccess in Apache web server:Suppressing error messages</attacks:mitigations>
+    </rdf:Description>
+    <!--3-->
+    <rdf:Description rdf:about="#FuzzingForApplicationMapping">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Fuzzing for application mapping</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:information leakage</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Construct a code book for error messages:Wrap application functionality in an output encoding scheme:Obfuscate server fields of HTTP response:Hide inner ordering of HTTP response header:Customizing HTTP error codes such as 404 or 500:Hide HTTP response header software information filed:Hide cookies software information filed:Obfuscate database type in database APIs error message</attacks:mitigations>
+    </rdf:Description>
+    <!--4-->
+    <rdf:Description rdf:about="#FuzzingForGarneringOtherAdjacentUser/sensitiveData">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Fuzzing for garnering other adjacent user/sensitive data</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+    <!--5-->
+    <rdf:Description rdf:about="#Cross-DomainSearchTiming">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Cross-Domain Search Timing</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Cross site request forgery protection:The browsers security not leak timing information for cross domain requests</attacks:mitigations>
+    </rdf:Description>
+    <!--6-->
+    <rdf:Description rdf:about="#WSDLScanning">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">WSDL Scanning</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Validate the received messages against the WSDL Schema:Provide limited access to WSDL file:Ensure the WSDL does not expose functions and APIs:Do not give an easily guessed function name</attacks:mitigations>
+    </rdf:Description>
+    <!--7-->
+    <rdf:Description rdf:about="#PullDataFromSystemResources">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Pull Data from System Resources</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">pull data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+    <!--8-->
+    <rdf:Description rdf:about="#ProbeApplicationMemory">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Probe Application Memory</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Deletion of data</attacks:mitigations>
+    </rdf:Description>
+    <!--9-->
+    <rdf:Description rdf:about="#Excavation">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Excavation</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Minimize response output:Remove potentially sensitive information</attacks:mitigations>
+    </rdf:Description>
 
+    <!--10-->
+    <rdf:Description rdf:about="#CollectDataFromCommonResourceLocations">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Collect Data from Common Resource Locations</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--11-->
+    <rdf:Description rdf:about="#WhiteBoxReverseEngineering">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">White Box Reverse Engineering</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--12-->
+    <rdf:Description rdf:about="#LiftingSensitiveDataEmbeddedInCache">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Lifting Sensitive Data Embedded in Cache</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">pull data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Strong encryption schemes</attacks:mitigations>
+    </rdf:Description>
+
+    <!--13-->
+    <rdf:Description rdf:about="#RetrieveEmbeddedSensitiveData">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Retrieve Embedded Sensitive Data</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">very high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:integrity:access control:authorization</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data:modify data:gain privileges</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--14-->
+    <rdf:Description rdf:about="#BlackBoxReverseEngineering">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Black Box Reverse Engineering</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--15-->
+    <rdf:Description rdf:about="#AnalysisOfPacketTimingAndSizes">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Analysis of Packet Timing and Sizes</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Distort packet sizes and timing at VPN layer by adding padding to normalize packet sizes and timing delays</attacks:mitigations>
+    </rdf:Description>
+
+    <!--16-->
+    <rdf:Description rdf:about="#ElectromagneticSide-ChannelAttack">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Electromagnetic Side-Channel Attack</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Utilize side channel resistant implementations of all crypto algorithms:Strong physical security of all devices that contain secret key information</attacks:mitigations>
+    </rdf:Description>
+
+    <!--17-->
+    <rdf:Description rdf:about="#CompromisingEmanations">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">CompromisingEmanations</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--18-->
+    <rdf:Description rdf:about="#ProtocolAnalysis">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Protocol Analysis</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:integrity</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:read data:modify data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--19-->
+    <rdf:Description rdf:about="#Cryptanalysis">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Cryptanalysis</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">very high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Algorithms are used correctly:Use proven cryptographic algorithms</attacks:mitigations>
+    </rdf:Description>
+
+    <!--20-->
+    <rdf:Description rdf:about="#ReverseEngineering">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Reverse Engineering</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Employ code obfuscation techniques:Use safe libraries</attacks:mitigations>
+    </rdf:Description>
+
+    <!--21-->
+    <rdf:Description rdf:about="#LeveragingRaceConditions">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Leveraging Race Conditions</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:access control:authorization:integrity</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">gain privileges:modify data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Use synchronization:Use safe libraries</attacks:mitigations>
+    </rdf:Description>
+
+    <!--22-->
+    <rdf:Description rdf:about="#ManipulatingState">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Manipulating State</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:access control:authorization:integrity:availability</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">gain privileges:modify data:unreliable execution</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Do not rely solely on user-controllable locations to maintain user state:Avoid sensitive information in user-controllable locations:Sensitive information that is part of the user state must be appropriately protected:All possible states must be handled by hardware finite state machines</attacks:mitigations>
+    </rdf:Description>
+
+    <!--23-->
+    <rdf:Description rdf:about="#SharedResourceManipulation">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Shared Resource Manipulation</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--24-->
+    <rdf:Description rdf:about="#HardwareFaultInjection">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Hardware Fault Injection</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:integrity</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data:bypass protection mechanism:hide activities:execute unauthorized commands</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Implement robust physical security countermeasures and monitoring</attacks:mitigations>
+    </rdf:Description>
+
+    <!--25-->
+    <rdf:Description rdf:about="#MobileDeviceFaultInjection">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Mobile Device Fault Injection</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:access control</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Strong physical security for devices holding key:Frequent changes to keys:Frequent changes to certificates</attacks:mitigations>
+    </rdf:Description>
+
+    <!--26-->
+    <rdf:Description rdf:about="#InterfaceManipulation">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Interface Manipulation</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">access control</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--27-->
+    <rdf:Description rdf:about="#ExploitNon-ProductionInterfaces">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Exploit Non-Production Interfaces</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:access control</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">gain privileges:bypass protection mechanism</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Ensure that production systems do not contain non production interfaces:Non production interfaces are only used in development environments</attacks:mitigations>
+    </rdf:Description>
+
+    <!--28-->
+    <rdf:Description rdf:about="#Root/JailbreakDetectionEvasionViaDebugging">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Root/Jailbreak Detection Evasion via Debugging</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">very high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">integrity:authorization</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">execute unauthorized commands</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Ensure that debuggers are not attached</attacks:mitigations>
+    </rdf:Description>
+
+    <!--29-->
+    <rdf:Description rdf:about="#FunctionalityMisuse">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Functionality Misuse</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">gain privileges</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">perform comprehensive threat modeling a process of identifying evaluating and mitigating potential threats to the application</attacks:mitigations>
+    </rdf:Description>
+
+    <!--30-->
+    <rdf:Description rdf:about="#ContentSpoofing">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Content Spoofing</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">integrity</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">modify data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--31-->
+    <rdf:Description rdf:about="#CounterfeitGPSSignals">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Counterfeit GPS Signals</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">integrity</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">modify data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--32-->
+    <rdf:Description rdf:about="#ResourceLocationSpoofing">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Resource Location Spoofing</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">authorization</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Monitor network activity</attacks:mitigations>
+    </rdf:Description>
+
+    <!--33-->
+    <rdf:Description rdf:about="#EstablishRogueLocation">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Establish Rogue Location</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality:integrity</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:mitigations>
+    </rdf:Description>
+
+    <!--34-->
+    <rdf:Description rdf:about="#EvilTwinWi-FiAttack">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Evil Twin Wi-Fi Attack</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Commercial defensive technology</attacks:mitigations>
+    </rdf:Description>
+
+    <!--35-->
+    <rdf:Description rdf:about="#CellularRogueBaseStation">
+        <rdf:type rdf:resource="#Attack"/>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Cellular Rogue Base Station</attacks:name>
+        <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
+        <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+        <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+        <attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+        <attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+        <attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:prerequisites>
+        <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Passively monitor cellular network connection</attacks:mitigations>
+    </rdf:Description>
 </rdf:RDF>

@@ -17,7 +17,7 @@ public class Registration {
         panel.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
 
         String[] severityStrings = {"low","medium","high","very high"};
-        String[] riskStrings = {"low","medium","high"};
+        String[] riskStrings = {"none","low","medium","high"};
         String[] skillsString = {"none", "low", "high"};
 
         //attack name

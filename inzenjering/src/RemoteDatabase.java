@@ -13,8 +13,8 @@ import java.util.List;
 
 public class RemoteDatabase {
 
-    private static final String QUERY_URL = "http://localhost:3030/baza5/sparql";
-    private static final String UPDATE_URL = "http://localhost:3030/baza5/update";
+    private static final String QUERY_URL = "http://localhost:3030/inz_db/sparql";
+    private static final String UPDATE_URL = "http://localhost:3030/inz_db/update";
 
 
    /*public static String parseImpact(String impact){
