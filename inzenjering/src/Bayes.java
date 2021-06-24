@@ -38,7 +38,7 @@ public class Bayes {
 
     public ProbabilisticNetwork load() {
         // loading from file
-        String fileName = "bayes.net";
+        String fileName = "data/bayes.net";
         ProbabilisticNetwork net = new ProbabilisticNetwork("bayes");
         BaseIO io = new NetIO();
         try {

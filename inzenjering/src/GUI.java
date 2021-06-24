@@ -46,7 +46,7 @@ public class GUI {
 
     public static void load_fis(){
         // Load from 'FCL' file
-        String fileName = "template.fcl";
+        String fileName = "data/template.fcl";
         FIS fis = FIS.load(fileName,true);
 
         // Error while loading?

@@ -35,6 +35,7 @@ public class MainMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new AttackTable();
+                RemoteDatabase.selectAllQuery();
             }
         });
 
