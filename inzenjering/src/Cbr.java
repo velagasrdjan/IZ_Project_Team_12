@@ -1,5 +1,6 @@
 import java.awt.Component;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -24,19 +25,13 @@ public class Cbr {
 	public Cbr(Attack a) {
 		
     	StandardCBRApplication recommender = new MainMenu();
-
 		try {
 			recommender.configure();
-
 			recommender.preCycle();
-
-
-
 
 			CBRQuery query = new CBRQuery();
 
 			Model model=new Model();
-
 		
 			model.setName(a.getName());
 			model.setRisk(a.getRisk());
@@ -67,32 +62,30 @@ public class Cbr {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
 		 JFrame frame = new JFrame();
 	        JPanel panel = new JPanel();
 
-	        String[] columnNames = {"Similar attacks"};
+	        String[] columnNames = {"Similar attacks","Similarity percentage"};
 
 	        String[][] data = new String[newRes.size()][columnNames.length];
 	        for(int i=0; i<newRes.size(); i++){
+	        		String[] split1 = newRes.get(i).ress.split("=");
+	        		String[] split2 = split1[1].split(",");
+					String[] split3 = newRes.get(i).ress.split("->");
+
 	                data[i]= new String[]
-	                        { newRes.get(i).ress};
+	                        {
+	                        		split2[0],
+									split3[1].trim().substring(0,6)
+	                        		//newRes.get(i).ress
+	                        };
 
 	        }
-
-	      
 
 	        DefaultTableModel dm = new DefaultTableModel();
 	        dm.setDataVector(data, columnNames);
 	        JTable table = new JTable(dm);
-
-
-	        
-	        
-	        
 	        
 	        table.setBounds(30, 40, 200, 300);
 

@@ -24,11 +24,6 @@ public class CbrTable {
 
         }
 
-        String[][] q = {
-                { "Kundan Kumar Jha", "4031", "CSE" , "blabla", "blabla", "aa", "aaa", "aaa", "Edit"},
-
-        };
-
         DefaultTableModel dm = new DefaultTableModel();
         dm.setDataVector(data, columnNames);
         JTable table = new JTable(dm);
@@ -46,10 +41,6 @@ public class CbrTable {
 			}
 		});
 
-        
-        
-        
-        
         table.setBounds(30, 40, 200, 300);
 
         // adding it to JScrollPane

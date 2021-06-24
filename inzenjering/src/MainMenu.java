@@ -42,17 +42,6 @@ public class MainMenu implements StandardCBRApplication {
 	public static JFrame frame;
 	
 	public static ArrayList<String> res=new ArrayList<String>();
-	
-	
-
-
-	
-	CsvConnector konektor=new CsvConnector();
-	
-	
-	
-	
-	
 
 	public void configure() throws ExecutionException {
 		_connector =  new CsvConnector();
@@ -63,34 +52,15 @@ public class MainMenu implements StandardCBRApplication {
 		simConfig = new NNConfig(); // KNN configuration
 		simConfig.setDescriptionSimFunction(new Average());  // global similarity function = average
 
-			
-		
-			
-	// global similarity function = average
-		//Name,Risk,Severity,Scope,Impact,Skills,Prerequisites,Mitigations
-
-		
-		//simConfig.addMapping(new Attribute("name", Model.class), new EqualsStringIgnoreCase());
-		
 		simConfig.addMapping(new Attribute("risk", Model.class), new EqualsStringIgnoreCase());
 		simConfig.addMapping(new Attribute("severity", Model.class), new EqualsStringIgnoreCase());
-		simConfig.addMapping(new Attribute("scope", Model.class), new MaxString());
-		simConfig.addMapping(new Attribute("impact", Model.class), new MaxString());
+		simConfig.addMapping(new Attribute("scope", Model.class), new EqualsStringIgnoreCase());
+		simConfig.addMapping(new Attribute("impact", Model.class), new EqualsStringIgnoreCase());
 		simConfig.addMapping(new Attribute("skills", Model.class), new EqualsStringIgnoreCase());
 		simConfig.addMapping(new Attribute("prerequisites", Model.class), new EqualsStringIgnoreCase());
 		//simConfig.addMapping(new Attribute("mitigations", Model.class), new EqualsStringIgnoreCase());
 		System.out.println(" sim conffig  "+simConfig);
 
-
-		// Equal - returns 1 if both individuals are equal, otherwise returns 0
-		// Interval - returns the similarity of two number inside an interval: sim(x,y) = 1-(|x-y|/interval)
-		// Threshold - returns 1 if the difference between two numbers is less than a threshold, 0 in the other case
-		// EqualsStringIgnoreCase - returns 1 if both String are the same despite case letters, 0 in the other case
-		// MaxString - returns a similarity value depending of the biggest substring that belong to both strings
-		// EnumDistance - returns the similarity of two enum values as the their distance: sim(x,y) = |ord(x) - ord(y)|
-		// EnumCyclicDistance - computes the similarity between two enum values as their cyclic distance
-		// Table - uses a table to obtain the similarity between two values. Allowed values are Strings or Enums. The table is read from a text file.
-		// TableSimilarity(List<String> values).setSimilarity(value1,value2,similarity) 
 	}
 
 	public void cycle(CBRQuery query) throws ExecutionException {
@@ -114,9 +84,6 @@ public class MainMenu implements StandardCBRApplication {
 		
 	}
 
-
-
-
 	public void postCycle() throws ExecutionException {
 		
 	}
@@ -134,13 +101,6 @@ public class MainMenu implements StandardCBRApplication {
 	
 	
     public static void main (String[] args){
-    	
-    	
-    	
-    	
-  
-	
-
     	
         GridLayout gl = new GridLayout(5,1);
         JFrame frame = new JFrame();
@@ -165,7 +125,6 @@ public class MainMenu implements StandardCBRApplication {
 
         panel.add(fuzzy);
         panel.add(bayes);
-
 
         JButton register = new JButton("Register new attack");
         register.addActionListener(new ActionListener() {
@@ -201,39 +160,23 @@ public class MainMenu implements StandardCBRApplication {
 
             }
         });
-
-	
-
-
         panel.add(fuzzy);
         panel.add(bayes);
         panel.add(register);
         panel.add(viewAll);
         panel.add(cbr);
         panel.add(mitigations);
-        
-        
 
-        frame.setPreferredSize(new Dimension(400, 300));
+        frame.setPreferredSize(new Dimension(700, 400));
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("MainMenu");
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        
-       Object[] rowData = new Object[10];
        
       
 		frame.repaint();
 		frame.revalidate();
     }
-
-	public static ArrayList<String> getRes() {
-		return res;
-	}
-
-	public static void setRes(ArrayList<String> res) {
-		MainMenu.res = res;
-	}
 }
