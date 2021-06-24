@@ -7,6 +7,7 @@ public class Registration {
 
     public String impact="";
     public String scope="";
+    public Attack a;
 
 
     public Registration(){
@@ -233,6 +234,7 @@ public class Registration {
                             comboSkills.getSelectedItem().toString());
 
                     RemoteDatabase.insertQuery(attack);
+                    a=attack;
 
                     JOptionPane.showMessageDialog(frame,
                             "Attack successfully registered.",
@@ -270,5 +272,18 @@ public class Registration {
             }
         }
     }
+    public Attack getAtt(Attack a) {
+    	return a;
+    }
+
+	public Attack getA() {
+		return a;
+	}
+
+	public void setA(Attack a) {
+		this.a = a;
+	}
+    
+    
 
 }

@@ -17,7 +17,7 @@ import ucm.gaia.jcolibri.util.FileIO;
 
 public class CsvConnector  implements Connector  {
 	
-	public static ArrayList<Model> pacijenti;
+	public static ArrayList<Model> attacks;
 	
 	@Override
 	public Collection<CBRCase> retrieveAllCases() {
@@ -38,10 +38,7 @@ public class CsvConnector  implements Connector  {
 				CBRCase cbrCase = new CBRCase();
 
 				Model txDescription = new Model();
-				//CaseDescription caseDescription = new CaseDescription();
 				
-				
-				//#Name,Risk,Severity,Scope,Impact,Skills,Prerequisites,Mitigations
 				
 				
 				txDescription.setName(values[0]);
@@ -53,7 +50,6 @@ public class CsvConnector  implements Connector  {
 				txDescription.setSkills(values[5]);
 				txDescription.setPrerequisites(values[6]);
 				txDescription.setMitigations(values[7]);
-				//pacijenti.add(txDescription);
 				
 				
 				cbrCase.setDescription(txDescription);
@@ -87,12 +83,12 @@ public class CsvConnector  implements Connector  {
 	public void initFromXMLfile(URL arg0) throws InitializingException {
 	}
 
-	public static ArrayList<Model> getPacijenti() {
-		return pacijenti;
+	public static ArrayList<Model> getAttacks() {
+		return attacks;
 	}
 
-	public static void setPacijenti(ArrayList<Model> pacijenti) {
-		CsvConnector.pacijenti = pacijenti;
+	public static void setAttacks(ArrayList<Model> attacks) {
+		CsvConnector.attacks = attacks;
 	}
 	
 	

@@ -41,7 +41,6 @@ public class AttackTable {
         DefaultTableModel dm = new DefaultTableModel();
         dm.setDataVector(data, columnNames);
         JTable table = new JTable(dm);
-
         //table.setBounds(30, 40, 200, 300);
 
         table.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
@@ -64,15 +63,14 @@ public class AttackTable {
         table.getColumnModel().getColumn(5).setPreferredWidth(200);
         table.getColumnModel().getColumn(3).setPreferredWidth(100);
 
-
         table.setRowHeight(30);
 
         panel.add(sp);
-       // panel.setSize(new Dimension(1000, 800));
         frame.add(panel);
-        // Frame Size
+        table.setBounds(30, 40, 200, 300);
+        
 
-        // Frame Visible = true
+        //frame.setSize(800, 400);
         frame.setTitle("List of attacks");
         frame.pack();
         frame.setLocationRelativeTo(null);
