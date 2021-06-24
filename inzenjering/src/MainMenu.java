@@ -162,10 +162,7 @@ public class MainMenu implements StandardCBRApplication {
 			e.printStackTrace();
 		}
 	
-    	
-    	
-    	
-    	
+
     	
         GridLayout gl = new GridLayout(5,1);
         JFrame frame = new JFrame();
@@ -203,9 +200,9 @@ public class MainMenu implements StandardCBRApplication {
         viewAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<Attack> attacks = RemoteDatabase.selectAllQuery();
+                List<Attack> attacks = new ArrayList<>();
+					attacks =	RemoteDatabase.selectAllQuery();
                 new AttackTable(attacks);
-
             }
         });
 

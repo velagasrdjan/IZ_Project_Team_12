@@ -2,14 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
-public class Registration {
-
+public class Edit {
     public String impact="";
     public String scope="";
 
 
-    public Registration(){
+    public Edit(Attack attack){
+        RemoteDatabase.deleteQuery(attack);
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
         JFrame frame = new JFrame();
@@ -29,7 +30,7 @@ public class Registration {
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.ipadx = 150;
-        //gbc.gridwidth = 3;
+       // gbc.gridwidth = 3;
         JTextField textName = new JTextField();
         panel.add(textName,gbc);
 
@@ -185,8 +186,59 @@ public class Registration {
         gbc.gridx = 3;
         gbc.gridy = 12;
         //gbc.gridwidth = 2;
-        JButton calculate = new JButton("Register");
+        JButton calculate = new JButton("Save edit");
         panel.add(calculate,gbc);
+
+
+        //set name
+        textName.setText(attack.name);
+        textMitigaiton.setText(attack.mitigations);
+        //set impact
+        String[] splited = attack.impact.split(":");
+        for(String s : splited){
+            if(s.equals("read data"))
+                read_data.setSelected(true);
+            if(s.equals("confidentiality"))
+                confidentiality2.setSelected(true);
+            if(s.equals("information leakage"))
+                information_leakage.setSelected(true);
+            if(s.equals("pull data"))
+                pull_data.setSelected(true);
+            if(s.equals("modify data"))
+                modify_data.setSelected(true);
+            if(s.equals("gain privileges"))
+                gain_privileges.setSelected(true);
+            if(s.equals("unreliable execution"))
+                unreliable_execution.setSelected(true);
+            if(s.equals("bypass protection mechanism"))
+                bypass_protection_mechanism.setSelected(true);
+            if(s.equals("hide activities"))
+                hide_activities.setSelected(true);
+            if(s.equals("execute unauthorized commands"))
+                execute_unauthorized_commands.setSelected(true);
+            if(s.equals("access control"))
+                access_control2.setSelected(true);
+        }
+
+        comboRisk.setSelectedItem(attack.risk);
+        comboPrerequisites.setSelectedItem(attack.prerequisites);
+        comboSeverity.setSelectedItem(attack.severity);
+        comboSkills.setSelectedItem(attack.skills_required);
+
+        String[] splitedScope = attack.scope.split(":");
+        for(String s : splitedScope){
+            if(s.equals("confidentiality"))
+                confidentiality.setSelected(true);
+            if(s.equals("integrity"))
+                integrity.setSelected(true);
+            if(s.equals("access control"))
+                access_control.setSelected(true);
+            if(s.equals("authorization"))
+                authorization.setSelected(true);
+            if(s.equals("availability"))
+                availability.setSelected(true);
+        }
+
 
         calculate.addActionListener(new ActionListener() {
             @Override
@@ -235,17 +287,18 @@ public class Registration {
                     RemoteDatabase.insertQuery(attack);
 
                     JOptionPane.showMessageDialog(frame,
-                            "Attack successfully registered.",
+                            "Attack successfully edited.",
                             "Success message",
                             JOptionPane.INFORMATION_MESSAGE);
                     frame.dispose();
+
                 }
             }
         });
 
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setTitle("Register attack");
+        frame.setTitle("Edit attack");
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -270,5 +323,7 @@ public class Registration {
             }
         }
     }
+
+
 
 }

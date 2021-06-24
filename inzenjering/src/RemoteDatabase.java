@@ -13,8 +13,8 @@ import java.util.List;
 
 public class RemoteDatabase {
 
-    private static final String QUERY_URL = "http://localhost:3030/baza3/sparql";
-    private static final String UPDATE_URL = "http://localhost:3030/baza3/update";
+    private static final String QUERY_URL = "http://localhost:3030/baza5/sparql";
+    private static final String UPDATE_URL = "http://localhost:3030/baza5/update";
 
 
    /*public static String parseImpact(String impact){
@@ -121,6 +121,31 @@ public class RemoteDatabase {
        UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
        updateProcessor.execute();
    }
+
+    public static void deleteQuery(Attack attack) {
+        // INSERT
+        String deleteString = ""
+                + "PREFIX attacks: <https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#> "
+                + "DELETE "
+                + "WHERE {"
+                + " attacks:" + attack.name.replaceAll(" ", "")
+                + " a attacks:Attack ; "
+                + " attacks:impact  '" + attack.impact + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:mitigations  '" + attack.mitigations + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:name  '" + attack.name + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:prerequisites  '" + attack.prerequisites + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:risk  '" + attack.risk + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:scope  '" + attack.scope + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:severity  '" + attack.severity + "' ^^<http://w3.org/2001/XMLSchema#string>;"
+                + " attacks:skills_required  '" + attack.skills_required + "' ^^<http://w3.org/2001/XMLSchema#string>."
+                + "}";
+        System.out.println(deleteString);
+
+        UpdateRequest updateRequest = UpdateFactory.create(deleteString);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
+        updateProcessor.execute();
+
+    }
 
     public static List<Attack>  selectAllQuery() {
         String queryString = ""
