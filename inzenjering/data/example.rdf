@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xml:base="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks"
+	xmlns:attacks="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#">
+
+	<rdf:Description rdf:about="#QuerySystemForInformation">
+		<rdf:type rdf:resource="#Attack"/>
+		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Query System for Information</attacks:name>
+	    <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
+		<attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">low</attacks:severity>
+		<attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string">confidentiality</attacks:scope>
+		<attacks:impact rdf:datatype="http://w3.org/2001/XMLSchema#string">read data</attacks:impact>
+		<attacks:skills_required rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:skills_required>
+		<attacks:prerequisites rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:prerequisites>
+		<attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Construct a code book for error messages:Wrap application functionality in an output encoding scheme</attacks:mitigations>
+
+	</rdf:Description>
+
+</rdf:RDF>

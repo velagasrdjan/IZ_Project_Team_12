@@ -2,6 +2,8 @@
   <library name="jFuzzyLogic">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/jFuzzyLogic.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-jena-fuseki-3.11.0/apache-jena-fuseki-3.11.0/fuseki-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jCOLIBRI-3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

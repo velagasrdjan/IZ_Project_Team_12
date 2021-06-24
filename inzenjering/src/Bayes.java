@@ -5,12 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.List;
 
 import unbbayes.io.BaseIO;
 import unbbayes.io.NetIO;
-import unbbayes.prs.Edge;
 import unbbayes.prs.Node;
 import unbbayes.prs.bn.JunctionTreeAlgorithm;
 import unbbayes.prs.bn.ProbabilisticNetwork;
@@ -38,7 +38,7 @@ public class Bayes {
 
     public ProbabilisticNetwork load() {
         // loading from file
-        String fileName = "bayes.net";
+        String fileName = "data/bayes.net";
         ProbabilisticNetwork net = new ProbabilisticNetwork("bayes");
         BaseIO io = new NetIO();
         try {
@@ -94,12 +94,12 @@ public class Bayes {
         factNode7.addFinding(integrity,true);
         factNode8.addFinding(authorization,true);
 
-        factNode9.addFinding(bad_security_system,false);
-        factNode10.addFinding(outdated_antivirus,false);
-        factNode11.addFinding(poor_connection,false);
-        factNode12.addFinding(small_company,false);
-        factNode13.addFinding(installing_malicious_software,false);
-        factNode14.addFinding(poor_data_storage,false);
+        factNode9.addFinding(bad_security_system,true);
+        factNode10.addFinding(outdated_antivirus,true);
+        factNode11.addFinding(poor_connection,true);
+        factNode12.addFinding(small_company,true);
+        factNode13.addFinding(installing_malicious_software,true);
+        factNode14.addFinding(poor_data_storage,true);
 
         // propagation
         try {
@@ -125,26 +125,12 @@ public class Bayes {
                 else return 0;
             }
         });
-
-        String max1 = nodeListLief.get(0).getName() + " " + nodeListLief.get(0).getStateAt(0) + ": " + ((ProbabilisticNode) nodeListLief.get(0)).getMarginalAt(0);
-        String max2 = nodeListLief.get(1).getName() + " " + nodeListLief.get(1).getStateAt(0) + ": " + ((ProbabilisticNode) nodeListLief.get(1)).getMarginalAt(0);
-        String max3 = nodeListLief.get(2).getName() + " " + nodeListLief.get(2).getStateAt(0) + ": " + ((ProbabilisticNode) nodeListLief.get(2)).getMarginalAt(0);
+        DecimalFormat df = new DecimalFormat("###.###");
+        String max1 = nodeListLief.get(0).getName() + " " + ": " + df.format(((ProbabilisticNode) nodeListLief.get(0)).getMarginalAt(0)*100)+"%";
+        String max2 = nodeListLief.get(1).getName() + " " + ": " + df.format(((ProbabilisticNode) nodeListLief.get(1)).getMarginalAt(0)*100)+"%";
+        String max3 = nodeListLief.get(2).getName() + " " + ": " + df.format(((ProbabilisticNode) nodeListLief.get(2)).getMarginalAt(0)*100)+"%";
 
         viewResult(max1,max2,max3);
-        /*factNode1.addFinding(risk, true);
-        factNode2.addFinding(access_control,true);
-        factNode3.addFinding(read_data,true);
-        factNode4.addFinding(severity,true);
-        factNode5.addFinding(confidentiality,true);
-        factNode6.addFinding(modify_data,true);
-        factNode7.addFinding(integrity,true);
-        factNode8.addFinding(authorization,true);
-        factNode9.addFinding(bad_security_system,true);
-        factNode10.addFinding(outdated_antivirus,true);
-        factNode11.addFinding(poor_connection,true);
-        factNode12.addFinding(small_company,true);
-        factNode13.addFinding(installing_malicious_software,true);
-        factNode14.addFinding(poor_data_storage,true);*/
 
         try {
             net.updateEvidences();
@@ -210,34 +196,21 @@ public class Bayes {
             @Override
             public void actionPerformed(ActionEvent e) {
                 risk = comboRisk.getSelectedIndex();
-                System.out.println(risk);
                 access_control = comboAccessControl.getSelectedIndex();
-                System.out.println(access_control);
                 read_data = comboReadData.getSelectedIndex();
-                System.out.println(read_data);
                 severity = comboSeverity.getSelectedIndex();
-                System.out.println(severity);
                 confidentiality = comboConfidentiality.getSelectedIndex();
-                System.out.println(confidentiality);
                 modify_data = comboModifyData.getSelectedIndex();
-                System.out.println(modify_data);
                 integrity = comboIntegrity.getSelectedIndex();
-                System.out.println(integrity);
                 authorization = comboAuthorization.getSelectedIndex();
-                System.out.println(authorization);
-                bad_security_system = comboBadSecurity.getSelectedIndex();
-                System.out.println(bad_security_system);
+                bad_security_system = comboBadSecurity.getSelectedIndex();;
                 outdated_antivirus = comboAntivirus.getSelectedIndex();
-                System.out.println(outdated_antivirus);
                 poor_connection = comboConnection.getSelectedIndex();
-                System.out.println(poor_connection);
                 small_company = comboCompany.getSelectedIndex();
-                System.out.println(small_company);
                 installing_malicious_software = comboSoftware.getSelectedIndex();
-                System.out.println(installing_malicious_software);
                 poor_data_storage = comboStorage.getSelectedIndex();
-                System.out.println(poor_data_storage);
                 evidence(net);
+                frame.dispose();
             }
         });
 
