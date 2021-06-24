@@ -1,26 +1,27 @@
-import javax.swing.*;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
 
 
 
-public class CbrTable {
-    public CbrTable(List<Attack> attackList){
+
+public class MitigationsTable {
+    public MitigationsTable(List<Attack> attackList){
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
 
-        String[] columnNames = {"Click on attack to see similar attacks"};
+        String[] columnNames = {"Click on attack to see mitigations"};
 
         String[][] data = new String[attackList.size()][columnNames.length];
         for(int i=0; i<attackList.size(); i++){
                 data[i]= new String[]
-                        {attackList.get(i).name};
+                        {attackList.get(i).name };
 
         }
 
@@ -40,7 +41,7 @@ public class CbrTable {
 			public void valueChanged(ListSelectionEvent e) {
 				if(e.getValueIsAdjusting()) {
 					int row =table.getSelectedRow();
-					new Cbr(attackList.get(row));
+					new Mitigations(attackList.get(row));
 				}
 				
 			}
@@ -69,3 +70,4 @@ public class CbrTable {
 
 
 }
+

@@ -18,6 +18,7 @@ import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.GlobalSimilarity
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.EqualsStringIgnoreCase;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
+import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.MaxString;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Threshold;
 import ucm.gaia.jcolibri.method.retrieve.selection.SelectCases;
 
@@ -69,15 +70,15 @@ public class MainMenu implements StandardCBRApplication {
 		//Name,Risk,Severity,Scope,Impact,Skills,Prerequisites,Mitigations
 
 		
-		simConfig.addMapping(new Attribute("name", Model.class), new EqualsStringIgnoreCase());
-		// simConfig.addMapping(new Attribute("price", TransactionDescription.class), new Interval(100));
+		//simConfig.addMapping(new Attribute("name", Model.class), new EqualsStringIgnoreCase());
+		
 		simConfig.addMapping(new Attribute("risk", Model.class), new EqualsStringIgnoreCase());
 		simConfig.addMapping(new Attribute("severity", Model.class), new EqualsStringIgnoreCase());
-		simConfig.addMapping(new Attribute("scope", Model.class), new EqualsStringIgnoreCase());
-		simConfig.addMapping(new Attribute("impact", Model.class), new EqualsStringIgnoreCase());
+		simConfig.addMapping(new Attribute("scope", Model.class), new MaxString());
+		simConfig.addMapping(new Attribute("impact", Model.class), new MaxString());
 		simConfig.addMapping(new Attribute("skills", Model.class), new EqualsStringIgnoreCase());
 		simConfig.addMapping(new Attribute("prerequisites", Model.class), new EqualsStringIgnoreCase());
-		simConfig.addMapping(new Attribute("mitigations", Model.class), new EqualsStringIgnoreCase());
+		//simConfig.addMapping(new Attribute("mitigations", Model.class), new EqualsStringIgnoreCase());
 		System.out.println(" sim conffig  "+simConfig);
 
 
@@ -185,7 +186,7 @@ public class MainMenu implements StandardCBRApplication {
 
             }
         });
-        JButton cbr = new JButton("View similarity"); // ovde ce biti i izmena postojecih napada
+        JButton cbr = new JButton("View similarity");
         cbr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -194,14 +195,17 @@ public class MainMenu implements StandardCBRApplication {
 
             }
         });
+        JButton  mitigations= new JButton("View mitigations"); 
+        mitigations.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                List<Attack> attacks = RemoteDatabase.selectAllQuery();
+                new MitigationsTable(attacks);
 
-		JButton cbd = new JButton("Find similar attack"); // ovde ce biti i izmena postojecih napada
-		cbd.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new CaseBased();
-			}
-		});
+            }
+        });
+
+	
 
 
         panel.add(fuzzy);
@@ -209,6 +213,8 @@ public class MainMenu implements StandardCBRApplication {
         panel.add(register);
         panel.add(viewAll);
         panel.add(cbr);
+        panel.add(mitigations);
+        
         
 
         frame.setPreferredSize(new Dimension(400, 300));
