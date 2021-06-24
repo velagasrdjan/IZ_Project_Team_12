@@ -4,7 +4,7 @@
 	xml:base="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks"
 	xmlns:attacks="https://github.com/velagasrdjan/IZ_Project_Team_12.git/attacks#">
     <!--1-->
-	<rdf:Description rdf:about="#QuerySystemForInformation">
+	<rdf:Description rdf:about="#QuerySystemforInformation">
 		<rdf:type rdf:resource="#Attack"/>
 		<attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Query System for Information</attacks:name>
 	    <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
@@ -28,7 +28,7 @@
         <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Using blank index html:Preventing with .htaccess in Apache web server:Suppressing error messages</attacks:mitigations>
     </rdf:Description>
     <!--3-->
-    <rdf:Description rdf:about="#FuzzingForApplicationMapping">
+    <rdf:Description rdf:about="#Fuzzingforapplicationmapping">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Fuzzing for application mapping</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">high</attacks:risk>
@@ -40,9 +40,9 @@
         <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Construct a code book for error messages:Wrap application functionality in an output encoding scheme:Obfuscate server fields of HTTP response:Hide inner ordering of HTTP response header:Customizing HTTP error codes such as 404 or 500:Hide HTTP response header software information filed:Hide cookies software information filed:Obfuscate database type in database APIs error message</attacks:mitigations>
     </rdf:Description>
     <!--4-->
-    <rdf:Description rdf:about="#FuzzingForGarneringOtherAdjacentUser/sensitiveData">
+    <rdf:Description rdf:about="#Fuzzingforgarneringotheradjacentuser-sensitivedata">
         <rdf:type rdf:resource="#Attack"/>
-        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Fuzzing for garnering other adjacent user/sensitive data</attacks:name>
+        <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Fuzzing for garnering other adjacent user-sensitive data</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
         <attacks:severity rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:severity>
         <attacks:scope rdf:datatype="http://w3.org/2001/XMLSchema#string"></attacks:scope>
@@ -76,7 +76,7 @@
         <attacks:mitigations rdf:datatype="http://w3.org/2001/XMLSchema#string">Validate the received messages against the WSDL Schema:Provide limited access to WSDL file:Ensure the WSDL does not expose functions and APIs:Do not give an easily guessed function name</attacks:mitigations>
     </rdf:Description>
     <!--7-->
-    <rdf:Description rdf:about="#PullDataFromSystemResources">
+    <rdf:Description rdf:about="#PullDatafromSystemResources">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Pull Data from System Resources</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
@@ -113,7 +113,7 @@
     </rdf:Description>
 
     <!--10-->
-    <rdf:Description rdf:about="#CollectDataFromCommonResourceLocations">
+    <rdf:Description rdf:about="#CollectDatafromCommonResourceLocations">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Collect Data from Common Resource Locations</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
@@ -139,7 +139,7 @@
     </rdf:Description>
 
     <!--12-->
-    <rdf:Description rdf:about="#LiftingSensitiveDataEmbeddedInCache">
+    <rdf:Description rdf:about="#LiftingSensitiveDataEmbeddedinCache">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Lifting Sensitive Data Embedded in Cache</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
@@ -178,7 +178,7 @@
     </rdf:Description>
 
     <!--15-->
-    <rdf:Description rdf:about="#AnalysisOfPacketTimingAndSizes">
+    <rdf:Description rdf:about="#AnalysisofPacketTimingandSizes">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Analysis of Packet Timing and Sizes</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">none</attacks:risk>
@@ -347,7 +347,7 @@
     </rdf:Description>
 
     <!--28-->
-    <rdf:Description rdf:about="#Root/JailbreakDetectionEvasionViaDebugging">
+    <rdf:Description rdf:about="#Root/JailbreakDetectionEvasionviaDebugging">
         <rdf:type rdf:resource="#Attack"/>
         <attacks:name rdf:datatype="http://w3.org/2001/XMLSchema#string">Root/Jailbreak Detection Evasion via Debugging</attacks:name>
         <attacks:risk rdf:datatype="http://w3.org/2001/XMLSchema#string">medium</attacks:risk>
